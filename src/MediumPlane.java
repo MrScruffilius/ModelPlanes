@@ -18,7 +18,7 @@ public class MediumPlane {
     private final static int FRAME_AMOUNT = 13;
 
     /**
-     *  Creates a picture of the plane out of a genome-String
+     * Creates a picture of the plane out of a genome-String
      **/
     public static void createPic(String genome) throws IOException {
         String path = "";
@@ -62,8 +62,8 @@ public class MediumPlane {
             }
         }
         String path3 = "Resources\\wings_medium_" + Integer.parseInt(genome.substring(6, 8), 16) + ".png";
-        File file3 = new File(path3);
-        BufferedImage img3 = ImageIO.read(file3);
+        file2 = new File(path3);
+        BufferedImage img3 = ImageIO.read(file2);
         Raster raster3 = img3.getData();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -77,8 +77,8 @@ public class MediumPlane {
             }
         }
         String path4 = "Resources\\back_medium_" + Integer.parseInt(genome.substring(4, 6), 16) + ".png";
-        File file4 = new File(path4);
-        BufferedImage img4 = ImageIO.read(file4);
+        file2 = new File(path4);
+        BufferedImage img4 = ImageIO.read(file2);
         Raster raster4 = img4.getData();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -92,8 +92,8 @@ public class MediumPlane {
             }
         }
         String path5 = "Resources\\front_medium_" + Integer.parseInt(genome.substring(10, 12), 16) + ".png";
-        File file5 = new File(path5);
-        BufferedImage img5 = ImageIO.read(file5);
+        file2 = new File(path5);
+        BufferedImage img5 = ImageIO.read(file2);
         Raster raster5 = img5.getData();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -107,8 +107,8 @@ public class MediumPlane {
             }
         }
         String path6 = "Resources\\color" + Integer.parseInt(genome.substring(2, 4), 16) + ".png";
-        File file6 = new File(path6);
-        BufferedImage img6 = ImageIO.read(file6);
+        file2 = new File(path6);
+        BufferedImage img6 = ImageIO.read(file2);
         Raster raster6 = img6.getData();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -134,7 +134,7 @@ public class MediumPlane {
     }
 
     /**
-     *  Creates a random genome-String and paints the picture and adds the genome to the pop.txt-file
+     * Creates a random genome-String and paints the picture and adds the genome to the pop.txt-file
      **/
     public static void createGenomeMedium() {
         StringBuilder builder = new StringBuilder();
@@ -161,8 +161,8 @@ public class MediumPlane {
     }
 
     /**
-     *  Merges two random genome-Strings of the pop.txt-file to a new genome with attributes of both Parents
-     * **/
+     * Merges two random genome-Strings of the pop.txt-file to a new genome with attributes of both Parents
+     **/
     public static void mergeGenomesMedium() throws IOException {
         List<String> liste = Files.readAllLines(Path.of("Resources\\pop.txt")).stream().filter(s -> s.length() > 8).toList();
         int poss = (int) (Math.random() * liste.size());
@@ -243,8 +243,8 @@ public class MediumPlane {
 
 
     /**
-     *  Returns a Hex-String with two digits
-     * **/
+     * Returns a Hex-String with two digits
+     **/
     private static String toHex(int i) {
         String s = Integer.toHexString(i);
         if (s.length() == 1) {
@@ -255,8 +255,8 @@ public class MediumPlane {
 
 
     /**
-     *  Main-function.......
-     * **/
+     * Main-function.......
+     **/
     public static void main(String[] args) throws IOException {
         createGenomeMedium();
         createGenomeMedium();
